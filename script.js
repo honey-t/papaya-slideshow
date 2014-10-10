@@ -1,5 +1,5 @@
 // create the module and name it papayaSperk
-var papayaSperk = angular.module('papayaSperk', ['ngRoute', 'ngAnimate']);
+var papayaSperk = angular.module('papayaSperk', ['ngRoute', 'ngAnimate', 'ngTouch']);
 
 // configure our routes
 papayaSperk.config(function ($routeProvider) {
@@ -30,16 +30,50 @@ papayaSperk.controller('mainController', function ($scope) {
 });
 
 papayaSperk.controller('jewelsController', function ($scope) {
-    $scope.message = 'Look! I am an about page.';
-    $scope.pageClass = 'page-contact';
+    $scope.pageClass = 'page-jewels';
+
+
+            // Set of Photos
+            $scope.photos = [
+                {src: 'imgs/ear/ear4.png', desc: 'Image 01'},
+                {src: 'imgs/ear/ear2.png', desc: 'Image 02'},
+                {src: 'imgs/ear/ear3.png', desc: 'Image 03'},
+                {src: 'imgs/ear/ear5.png', desc: 'Image 04'},
+                {src: 'imgs/ear/ear1.png', desc: 'Image 05'},
+
+            ];
+
+            // initial image index
+            $scope._Index = 0;
+
+            // if a current image is the same as requested image
+            $scope.isActive = function (index) {
+                return $scope._Index === index;
+            };
+
+            // show prev image
+            $scope.showPrev = function () {
+                $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.photos.length - 1;
+            };
+
+            // show next image
+            $scope.showNext = function () {
+                $scope._Index = ($scope._Index < $scope.photos.length - 1) ? ++$scope._Index : 0;
+            };
+
+            // show a certain image
+            $scope.showPhoto = function (index) {
+                $scope._Index = index;
+            };
+
+
 });
 
 papayaSperk.controller('inspirationController', function ($scope) {
-    $scope.message = 'Contact us! JK. This is just a demo.';
-    $scope.pageClass = 'page-home';
+    $scope.pageClass = 'page-inspiration';
 });
 
 papayaSperk.controller('orderController', function ($scope) {
-    $scope.message = 'Contact us! JK. This is just a demo.';
-    $scope.pageClass = 'page-about';
+    $scope.pageClass = 'page-order';
 });
+

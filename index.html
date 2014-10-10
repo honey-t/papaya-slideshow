@@ -4,33 +4,45 @@
 <html ng-app="papayaSperk">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <!-- SCROLLS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" />
-    <link rel="stylesheet" src="styles/custom.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="styles/custom.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 
     <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"></script>
-
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-touch.min.js"></script>
 
     <script src="script.js"></script>
 
-
-
-
 </head>
 
-<!-- define angular controller -->
 <body ng-controller="mainController">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Papaya šperk</a>
+        </div>
 
-<div id="main">
-    <!-- angular templating -->
-    <!-- this is where content will be injected -->
-    <div ng-view class="page {{ pageClass }}"></div>
-</div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="list-home"><a href="#"><i class="fa fa-home"></i> Úvod</a></li>
+            <li class="list-jewels"><a href="#jewels"><i class="fa fa-empire"></i> Šperky</a></li>
+            <li class="list-inspiraion"><a href="#inspiration"><i class="fa fa-globe"></i> Inpirace</a></li>
+            <li class="list-order"><a href="#order"><i class="fa fa-shopping-cart"></i> Objednávka</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- angular templating -->
+<!-- this is where content will be injected -->
+<div ng-view class="container-fluid page {{ pageClass }}"></div>
+
 
 </body>
 
