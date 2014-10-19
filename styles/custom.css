@@ -1,6 +1,13 @@
 
+body * {
+    font-family: 'Oxygen', serif;
+    font-size: 16px;
+}
+
 html, body, .page {
     height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 ul {
@@ -10,6 +17,8 @@ ul {
 .jumbotron {
     color: #fff;
 }
+
+
 
 .page-home {
     background: url("../imgs/ear/ear1.png");
@@ -172,75 +181,20 @@ ul {
 /*ANIMATIONS*/
 /*=============================================================================*/
 
-.page.ng-leave {
-    z-index: 9999;
-}
-
-.page.ng-enter {
-    z-index: 8888;
-}
-
-/*page specific animations ------------------------*/
-
-/*page-home --------------------------*/
-.page-home.ng-leave {
-    -webkit-transform-origin: 0% 0%;
-    -webkit-animation: rotateFall 1s both ease-in;
-    -moz-transform-origin: 0% 0%;
-    -moz-animation: rotateFall 1s both ease-in;
-    transform-origin: 0% 0%;
-    animation: rotateFall 1s both ease-in;
-}
-
-.page-home.ng-enter {
-    -webkit-animation: scaleUp 0.5s both ease-in;
-    -moz-animation: scaleUp 0.5s both ease-in;
-    animation: scaleUp 0.5s both ease-in;
-}
 
 /*page-inspiration ------------------------*/
-.page-inspiration.ng-leave {
+.page.ng-leave {
     -webkit-animation: slideOutLeft 0.5s both ease-in;
     -moz-animation: slideOutLeft 0.5s both ease-in;
     animation: slideOutLeft 0.5s both ease-in;
 }
 
-.page-inspiration.ng-enter {
+.page.ng-enter {
     -webkit-animation: slideInRight 0.5s both ease-in;
     -moz-animation: slideInRight 0.5s both ease-in;
     animation: slideInRight 0.5s both ease-in;
 }
 
-/*page-order ----------------------*/
-.page-order.ng-leave {
-    -webkit-transform-origin: 50% 50%;
-    -webkit-animation: rotateOutNewspaper .5s both ease-in;
-    -moz-transform-origin: 50% 50%;
-    -moz-animation: rotateOutNewspaper .5s both ease-in;
-    transform-origin: 50% 50%;
-    animation: rotateOutNewspaper .5s both ease-in;
-}
-
-.page-order.ng-enter {
-    -webkit-animation: slideInUp 0.5s both ease-in;
-    -moz-animation: slideInUp 0.5s both ease-in;
-    animation: slideInUp 0.5s both ease-in;
-}
-/*page-jewels ----------------------*/
-.page-jewels.ng-leave {
-    -webkit-transform-origin: 50% 50%;
-    -webkit-animation: rotateOutNewspaper .5s both ease-in;
-    -moz-transform-origin: 50% 50%;
-    -moz-animation: rotateOutNewspaper .5s both ease-in;
-    transform-origin: 50% 50%;
-    animation: rotateOutNewspaper .5s both ease-in;
-}
-
-.page-jewels.ng-enter {
-    -webkit-animation: slideInUp 0.5s both ease-in;
-    -moz-animation: slideInUp 0.5s both ease-in;
-    animation: slideInUp 0.5s both ease-in;
-}
 
 @-webkit-keyframes rotateFall {
     0% {
@@ -395,23 +349,5 @@ ul {
 }
 
 
-@-webkit-keyframes rotateOutNewspaper {
-    to {
-        -webkit-transform: translateZ(-3000px) rotateZ(360deg);
-        opacity: 0;
-    }
-}
 
-@-moz-keyframes rotateOutNewspaper {
-    to {
-        -moz-transform: translateZ(-3000px) rotateZ(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes rotateOutNewspaper {
-    to {
-        transform: translateZ(-3000px) rotateZ(360deg);
-        opacity: 0;
-    }
 }
